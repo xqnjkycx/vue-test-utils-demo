@@ -9,7 +9,8 @@ export default {
     "^.+\\.vue$": "@vue/vue3-jest",
   },
   moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"],
-  transformIgnorePatterns: ["/node_modules/"],
+  // transformIgnorePatterns: 指定某些文件不被babel翻译
+  transformIgnorePatterns: ["/node_modules/(?!axios)"],
   // coverageReporters -- 覆盖率报告的生成文件格式
   coverageReporters: ["json", "html"],
   // coverageDirectory -- 覆盖率报告的目录，测试报告所存放的位置 生成报告 npx jest --coverage

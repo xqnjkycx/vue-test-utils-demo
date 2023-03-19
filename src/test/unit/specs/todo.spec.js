@@ -1,4 +1,5 @@
 import { mount } from "@vue/test-utils";
+import { nextTick } from "vue";
 import Todo from "../../../components/todo/index.vue";
 
 test("renders a todo", () => {
@@ -22,7 +23,8 @@ test("create a todo", async () => {
 test("completes a todo", async () => {
   const wrapper = mount(Todo);
 
-  await wrapper.get('[data-test="todo-checkbox"]').setValue(true);
+  wrapper.get('[data-test="todo-checkbox"]').setValue(true);
+  await nextTick();
 
   expect(wrapper.get('[data-test="todo"]').classes()).toContain("completed");
 });
