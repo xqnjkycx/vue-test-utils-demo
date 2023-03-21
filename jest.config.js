@@ -18,6 +18,7 @@ export default {
   // collectCoverageFrom -- 测试报告想要覆盖那些文件，目录，前面加！是避开这些文件
   collectCoverageFrom: [
     "src/components/**/*.(js|vue)",
+    "src/hooks/**/*.js",
     "!src/main.js",
     "!src/router/index.js",
     "!**/node_modules/**",

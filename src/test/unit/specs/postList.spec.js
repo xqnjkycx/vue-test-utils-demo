@@ -41,7 +41,7 @@ test("display loading state on button click", async () => {
 
   await wrapper.get("button").trigger("click");
 
-  expect(wrapper.find('[role="alert"]')).toBe(true);
+  expect(wrapper.find('[role="alert"]').exists()).toBe(true);
   expect(wrapper.get("button").attributes()).toHaveProperty("disabled");
 
   await flushPromises();
