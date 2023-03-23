@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import { defineComponent } from "vue";
+import { defineComponent, inject } from "vue";
 import SomeFather from "../../../components/someFather/index.vue";
 
 test("provides fake data", () => {
@@ -14,7 +14,7 @@ test("provides fake data", () => {
   const wrapper = mount(SomeFather, {
     global: {
       stubs: {
-        FakeChild: TestComp,
+        SomeChild: TestComp,
       },
     },
   });
